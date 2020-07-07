@@ -11,7 +11,7 @@ namespace WebApiDemo.Controllers
     {
         static List<String> obj = new List<string>()
         {
-            "Akib","Archana","Mamta"
+            "Akib","Archana","Mamta","Atik"
         };
         // GET api/values
         public IEnumerable<string> Get()
