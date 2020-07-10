@@ -11,16 +11,18 @@ namespace WebApiDemo.Controllers
     public class EmployeeController : ApiController
     {
         Employee empobj = new Employee();
-        public IEnumerable<EmployeeClass> Get()
+        [HttpGet]
+        public IEnumerable<EmployeeClass> FetchAllEmployee()
         {
-           
             return empobj.BindGrid().ToList();
         }
 
-        public EmployeeClass Get(int myID)
+        [HttpGet]
+        public EmployeeClass FetchEmployeeByID(int id)
         {
             List<EmployeeClass> myobj = new List<EmployeeClass>();
-            return myobj.FirstOrDefault(e => e.ID == myID);
+            myobj = empobj.BindGrid().ToList();
+            return myobj.FirstOrDefault(e => e.ID == id);
         }
         
     }
